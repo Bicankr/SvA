@@ -1,19 +1,19 @@
 <?php
 session_start();
 require('libs/Smarty.class.php');
-require_once 'lib.php';
+require_once 'Lib.php';
 require_once('../Config.php');
 require_once('../DBConnect.php');
 require_once('ArticleLib.php');
 require_once('../SvatekLib.php');
 
 $smarty = new Smarty;
-$smarty->debugging = true;
+//$smarty->debugging = true;
 $smarty->$debug_tpl = 'libs/debug.tpl ';
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 if ($_SESSION['Logged'] == 'Yes') 
-	//$smarty->assign("menu", sprintf('%s%s', '<form action="nLogoutActions.php" method="post"><input type="submit" value="Odhl�sit se"/></form>', Menu()));
+	//$smarty->assign("menu", sprintf('%s%s', '<form action="nLogoutActions.php" method="post"><input type="submit" value="Odhlásit se"/></form>', Menu()));
 	$smarty->assign("menu", Menu());
 else 
 	$smarty->assign("menu", Menu());
